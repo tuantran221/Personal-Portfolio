@@ -5,6 +5,8 @@ import Services from "./Components/Services/Services";
 import Experience from "./Components/Experience/Experience";
 import Works from "./Components/Works/Works";
 import Portfolio from "./Components/Portfolio/Portfolio";
+import Testinomial from "./Components/Testimonial/Testinomial";
+import Contact from "./Components/Contact/Contact";
 function App() {
   return <div className="App">
     <Navbar/>
@@ -13,6 +15,8 @@ function App() {
     <Experience/>
     <Works/>
     <Portfolio/>
+    <Testinomial/>
+    <Contact/>
   </div>;
 }
 
