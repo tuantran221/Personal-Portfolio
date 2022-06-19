@@ -4,13 +4,22 @@ import './Services.css';
 import HeartEmoji from '../../img/heartemoji.png';
 import Glasses from '../../img/glasses.png';
 import Humble from '../../img/humble.png';
-import CV from "../../Tran-Trieu-Tuan.pdf"
+import CV from '../../Tran-Trieu-Tuan.pdf';
+
+import { themeContext } from '../../Context';
+import { useContext } from 'react';
+
+import { motion } from 'framer-motion';
+
 const Services = () => {
+    const transition = { duration: 1, type: 'spring' };
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
     return (
-        <div className="services">
+        <div className="services" id="Services">
             {/* left side */}
             <div className="awesome">
-                <span>My Awesome</span>
+                <span style={{ color: darkMode ? 'white' : '' }}>My Awesome</span>
                 <span>services</span>
                 <span>
                     Lorem ispum is simpley dummy text of printing of pringting Lorem
@@ -27,24 +36,38 @@ const Services = () => {
 
             {/* first card */}
             <div className="cards">
-                <div style={{ left: '14rem' }}>
+                <motion.div
+                    initial={{ left: '25%' }}
+                    whileInView={{ left: '14rem' }}
+                    transition={transition}
+                    style={{ left: '14rem' }}
+                >
                     <Card emoji={HeartEmoji} heading={'Design'} detail={'Figma, Sketch, Photoshop, Adobe, xd'} />
-                </div>
+                </motion.div>
                 {/* second card */}
 
-                <div style={{ top: '12rem', left: '-4rem' }}>
-                    <Card emoji={Glasses} heading={'Developer'} detail={'Html, css, Javascript, React'} />
-                </div>
+                <motion.div
+                    initial={{ left: '-25%' }}
+                    whileInView={{ left: '-4rem' }}
+                    transition={transition}
+                    style={{ top: '12rem', left: '-4rem' }}
+                >
+                    <Card emoji={Glasses} heading={'Developer'} detail={'Html, css, Javascript, React, Python, Java, Redux-Saga'} />
+                </motion.div>
 
                 {/* third card */}
 
-                <div style={{ top: '19rem', left: '12rem' }}>
-                    <Card emoji={Humble} heading={'UI/UX'} detail={'Figma, Sketch, Photoshop, Adobe, xd'} />
-                </div>
-            </div>
-            <div className='blur s-blur2' style={{background: "var(--purple"}}>
+                <motion.div
+                     initial={{ top: "19rem", left: "25rem" }}
+                     whileInView={{ left: "12rem" }}
+                     transition={transition}
 
+                    style={{ top: '19rem', left: '12rem' }}
+                >
+                    <Card emoji={Humble} heading={'UI/UX'} detail={'Figma, Sketch, Photoshop, Adobe, xd'} />
+                </motion.div>
             </div>
+            <div className="blur s-blur2" style={{ background: 'var(--purple' }}></div>
         </div>
     );
 };

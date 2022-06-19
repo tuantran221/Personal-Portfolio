@@ -30,7 +30,7 @@ const Testinomial = () => {
         },
     ];
     return (
-        <div className="t-wrapper">
+        <div className="t-wrapper" id="Testimonials">
             <div className="t-heading">
                 <span>Clients alway get</span>
                 <span>Exceptional Work</span>
@@ -44,7 +44,7 @@ const Testinomial = () => {
                     return (
                         <SwiperSlide key={index}>
                             <div className="testimonial">
-                                <img src={client.img} />
+                                <img src={client.img} alt=""/>
                                 <span>{client.review}</span>
                             </div>
                         </SwiperSlide>
