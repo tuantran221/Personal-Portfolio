@@ -52,7 +52,7 @@ const Services = () => {
                     transition={transition}
                     style={{ top: '12rem', left: '-4rem' }}
                 >
-                    <Card emoji={Glasses} heading={'Developer'} detail={'Html, css, Javascript, React, Python, Java, Redux-Saga'} />
+                    <Card emoji={Glasses} heading={'Developer'} detail={'Html, css, Javascript, React, Python,..'} />
                 </motion.div>
 
                 {/* third card */}
